@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import { Route, withRouter, BrowserRouter } from 'react-router-dom';
+import { Route, withRouter, HashRouter } from 'react-router-dom';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Login from './components/Login/Login';
 import { connect, Provider } from 'react-redux';
@@ -49,11 +49,11 @@ const AppContainer = compose(
 
 const WebApplication = () => {
   return (
-    <BrowserRouter>
+    <HashRouter >
       <Provider store={store}>
         <AppContainer />
       </Provider>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 

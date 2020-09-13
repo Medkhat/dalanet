@@ -25,9 +25,20 @@
     border-radius: 50%;
     border: 1px solid #ccc;
 }
+.avatar_block {margin-right: 20px;}
+.avatar_block img{
+    display: block;
+}
+.avatar_block label{
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    color: green;
+}
 .avatar {
     width: 100px;
-    margin-right: 20px;
     padding: 5px;
     border-radius: 5px;
     border: 1px solid #ccc;

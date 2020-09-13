@@ -5,6 +5,7 @@ const SET_USER_PROFILE = 'SET_USER_PROFILE'
 const TOGGLE_PRELOADER = 'TOGGLE_PRELOADER'
 const SET_STATUS = 'SET_STATUS'
 const DELETE_POST = 'DELETE_POST'
+const SET_AVA = 'SET_AVA'
 
 let initialState = {
     posts: [
@@ -50,6 +51,14 @@ const profileReducer = (state = initialState, action) => {
                 ...state,
                 posts: state.posts.filter(p => p.id !== action.postId)
             }
+        case SET_AVA:
+            return {
+                ...state,
+                userProfile: {
+                    ...state.userProfile, 
+                    photos: {...action.photo}
+                }
+            }
         default:
             return state
     }
@@ -61,6 +70,7 @@ export const setUserProfile = (userProfile) => ({ type: SET_USER_PROFILE, userPr
 export const togglePreloader = (isFetching) => ({ type: TOGGLE_PRELOADER, isFetching })
 export const setStatus = (status) => ({ type: SET_STATUS, status })
 export const deletePost = (postId) => ({ type: DELETE_POST, postId })
+export const setAva = (photo) => ({type: SET_AVA, photo})
 
 
 // REDUX THUNK FUNCTIONS
@@ -91,6 +101,14 @@ export const updateStatus = (status) => {
                     dispatch(setStatus(status))
                 }
             })
+    }
+}
+
+export const saveAva = (photo) => {
+    return async (dispatch) => {
+        let response = await profileAPI.saveAva(photo)
+        if (response.data.resultCode === 0)
+            dispatch(setAva(response.data.data.photos))
     }
 }
 

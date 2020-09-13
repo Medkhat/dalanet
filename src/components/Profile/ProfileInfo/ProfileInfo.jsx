@@ -1,18 +1,37 @@
 import React from 'react'
-import profile from '../Profile.module.css'
+import style from '../Profile.module.css'
 import Preloader from '../../common/Preloader/Preloader'
 import ProfileStatus from './ProfileStatus'
+import ava from '../../../img/ava.png'
 
 
-const ProfileInfo = ({userProfile, isFetching, status, updateStatus}) => {
+const ProfileInfo = ({userProfile, isFetching, isOwner, status, updateStatus, saveAva}) => {
 
     if (!userProfile) return <Preloader />
     if (isFetching) return <Preloader />
 
+    const onChangeAvaInput = (e) => {
+        if (e.target.files.length)
+            saveAva(e.target.files[0])
+    }
+
     return (
-        <div className={profile.info}>
-            <img src={userProfile.photos.small} className={profile.avatar} alt="AVATAR"/>
-            <div className={profile.data}>
+        <div className={style.info}>
+            <div className={style.avatar_block}>
+                <img src={userProfile.photos.small || ava} className={style.avatar} alt="AVATAR"/>
+                { 
+                    isOwner && 
+                    <label>
+                        <input 
+                            type="file" 
+                            id="ava-input" 
+                            style={{display: "none"}}
+                            onChange={onChangeAvaInput}
+                        /> Change ava
+                    </label>
+                }
+            </div>
+            <div className={style.data}>
                 <h4>
                     {userProfile.fullName}
                 </h4>
