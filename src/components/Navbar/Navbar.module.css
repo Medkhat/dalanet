@@ -1,0 +1,22 @@
+.nav {
+    width: 20%; 
+    padding: 10px 0;
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+.item {
+    margin: 3px 0;
+}
+.navitem {
+    text-decoration: none;
+    color: green;
+    display: block;
+    text-align: center;
+    padding: 5px 0;
+}
+.navitem:hover {
+    background-color: #ebebeb;
+}
+.active {
+    background-color: #ebebeb;
+}

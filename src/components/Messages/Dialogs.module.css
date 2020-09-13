@@ -1,0 +1,35 @@
+.content {
+    display: flex;
+    display: -webkit-flex;
+}
+.dialogs {
+    width: 20%;
+    margin-right: 20px;
+}
+.dialog_item {
+    display: block;
+    padding: 5px 0;
+    text-decoration: none;
+    color: green;
+    border-radius: 5px;
+    text-align: center;
+}
+.dialog_item:hover {
+    background-color: #ebebeb;
+}
+.active {
+    background-color: #ebebeb;
+}
+.messages {
+    margin-bottom: 10px;
+}
+.detail {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #ebebeb;
+    margin-bottom: 5px;
+}
+.new_message {
+    padding-top: 10px;
+    border-top: 1px solid #ebebeb;
+}

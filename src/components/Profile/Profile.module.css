@@ -1,0 +1,34 @@
+.new_post {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ededed;
+}
+.item {
+    margin-bottom: 20px;
+}
+.item_data {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.info {
+    margin-bottom: 30px;
+    display: flex;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+.ava {
+    width: 70px;
+    margin-right: 20px;
+    padding: 5px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+}
+.avatar {
+    width: 100px;
+    margin-right: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}

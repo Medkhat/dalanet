@@ -1,0 +1,15 @@
+.app-container {
+    max-width: 1400px;
+    min-width: 991px;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 80px auto 20px auto;
+}
+.content {
+    width: 77%;
+    padding: 10px;
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
