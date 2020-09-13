@@ -11,6 +11,10 @@
     align-items: center;
     margin-bottom: 5px;
 }
+.data, .form {
+    margin-right: 10px;
+    width: 50%;
+}
 .info {
     margin-bottom: 30px;
     display: flex;
@@ -18,13 +22,14 @@
     border: 1px solid #ccc;
     border-radius: 10px;
 }
-.ava {
+.ava { /* Users avatar */
     width: 70px;
     margin-right: 20px;
     padding: 5px;
     border-radius: 50%;
     border: 1px solid #ccc;
 }
+/* Profile avatar */
 .avatar_block {margin-right: 20px;}
 .avatar_block img{
     display: block;
@@ -42,4 +47,12 @@
     padding: 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
+}
+.contact {
+    display: inline-block;
+    margin-right: 10px;
+}
+.contact a {
+    text-decoration: none;
+    color: blue;
 }

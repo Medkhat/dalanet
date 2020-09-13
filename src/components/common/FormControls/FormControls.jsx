@@ -13,7 +13,7 @@ export const ValidateElement = ValidateElement => ({ input, meta: {touched, erro
 };
 
 export const createField = (type, placeholder, name, component, validators, label) => (
-    <div>
+    <div style={{marginBottom: 10}}>
         <Field type={type} component={component} validate={validators} name={name}  placeholder={placeholder}/> {label}
     </div>
 )

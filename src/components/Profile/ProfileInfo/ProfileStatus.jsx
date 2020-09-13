@@ -25,9 +25,10 @@ const ProfileStatus = props => {
 
     return (
         <div>
+            <b>Status: </b>
             {
                 !editMode && <div onDoubleClick={activateEditMode}>
-                    {!props.status ? "You don't have status" : props.status }
+                    {!props.status ? "You don't have a status" : props.status }
                 </div>
             }
             {

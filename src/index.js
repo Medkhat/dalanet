@@ -5,8 +5,6 @@ import './index.css';
 import WebApplication from './App';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <WebApplication />
-  </React.StrictMode>,
+  <WebApplication />,
   document.getElementById('root')
 );
