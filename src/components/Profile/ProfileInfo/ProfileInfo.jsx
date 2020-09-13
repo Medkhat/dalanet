@@ -3,11 +3,11 @@ import style from '../Profile.module.css'
 import Preloader from '../../common/Preloader/Preloader'
 import ProfileStatus from './ProfileStatus'
 import ava from '../../../img/ava.png'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import ProfileDataForm from './ProfileDataForm'
 
 const Contacts = ({contactTitle, contactValue}) => {
-    return <NavLink to={contactValue} target="_blank">{contactTitle}</NavLink>
+    return <Link to={contactValue} target="_blank">{contactTitle}</Link>
 }
 
 const ProfileData = ({userProfile, isOwner, activateEditMode}) => {
@@ -16,21 +16,21 @@ const ProfileData = ({userProfile, isOwner, activateEditMode}) => {
             <h4>
                 {userProfile.fullName}
             </h4>
-            <p><b>About me: </b> {userProfile.aboutMe} </p>
-            <p><b>Looking for a job: </b> { userProfile.lookingForAJob ? 'Yes' : 'No' } </p>
-            <p><b>My professional skills: </b> {userProfile.lookingForAJobDescription} </p>
-            <p>
+            <div><b>About me: </b> {userProfile.aboutMe} </div>
+            <div><b>Looking for a job: </b> { userProfile.lookingForAJob ? 'Yes' : 'No' } </div>
+            <div><b>My professional skills: </b> {userProfile.lookingForAJobDescription} </div>
+            <div>
                 <b>Contacts: </b>
                 {
                     Object.keys(userProfile.contacts).map(key => {
-                        return <p key={key} className={style.contact}>
+                        return <div key={key} className={style.contact}>
                             <Contacts key={key} contactTitle={key} contactValue={userProfile.contacts[key]}/>
-                        </p>
+                        </div>
                     })
                 }
-            </p>
+            </div>
             {
-                isOwner && <p><button onClick={activateEditMode}>Edit profile</button></p> 
+                isOwner && <div><button onClick={activateEditMode}>Edit profile</button></div> 
             }
         </div>
     )

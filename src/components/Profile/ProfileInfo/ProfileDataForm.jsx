@@ -10,17 +10,17 @@ const ProfileDataForm = reduxForm({form: 'editProfile'})(({handleSubmit, error, 
             { createField("", "About me", "aboutMe", ValidateElement("textarea"), [], "") }
             { createField("checkbox", "", "lookingForAJob", ValidateElement("input"), [], "Looking for a job") }
             { createField("", "My professional skills", "lookingForAJobDescription", ValidateElement("textarea"), [], "") }
-            <p>
+            <div>
                 <b>Contacts: </b>
                 {
                     Object.keys(userProfile.contacts).map(key => {
-                        return <p key={key} className={style.contact}>
+                        return <div key={key} className={style.contact}>
                             {createField("text", key, "contacts."+key, ValidateElement("input"), [], "")}
-                        </p>
+                        </div>
                     })
                 }
-            </p>
-            <p><button>Save</button></p> 
+            </div>
+            <div><button>Save</button></div> 
             { 
                 error && <div style={{color: 'red'}}>{error}</div>
             }
