@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import { Route, withRouter, BrowserRouter } from 'react-router-dom';
+import { Route, withRouter, BrowserRouter, Switch, Redirect } from 'react-router-dom';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Login from './components/Login/Login';
 import { connect, Provider } from 'react-redux';
@@ -28,10 +28,13 @@ class App extends React.Component {
         <div className="app-container">
           <Navbar />
           <div className="content">
-            <Route path="/profile/:userId?" render={withSuspense(ProfileContainer)} />
-            <Route path="/dialogs" render={withSuspense(DialogsContainer)} />
-            <Route path="/users" render={withSuspense(UsersContainer)}/>
-            <Route path="/login" render={() => <Login />}/>
+            <Switch>
+              <Route exact path="/" render={() => <Redirect to="/users"/>}/>
+              <Route path="/profile/:userId?" render={withSuspense(ProfileContainer)} />
+              <Route path="/dialogs" render={withSuspense(DialogsContainer)} />
+              <Route path="/users" render={withSuspense(UsersContainer)}/>
+              <Route path="/login" render={() => <Login />}/>
+            </Switch>
           </div>
         </div>
       </div>
@@ -49,7 +52,7 @@ const AppContainer = compose(
 
 const WebApplication = () => {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
       <Provider store={store}>
         <AppContainer />
       </Provider>
